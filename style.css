@@ -1,0 +1,183 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.first_page_container {
+  width: 100%;
+  height: 100vh;
+  background: url("http://www.solidbackgrounds.com/images/2560x1440/2560x1440-coffee-solid-color-background.jpg");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.first_page_container h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  color: #fff1b9;
+}
+/* Logo */
+nav .logo {
+  background: url("coffelogo.svg") no-repeat;
+  background-size: 150px 50px;
+  float: left;
+  margin-left: 15px;
+  width: 150px;
+  height: 50px;
+  display: block;
+}
+/* Hamburger  Menu Icon */
+nav #hamburger_menu {
+  display: none;
+}
+
+nav .hamburger_menu_btn {
+  width: 40px;
+  height: 30px;
+  float: right;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  display: block;
+  cursor: pointer;
+}
+nav .hamburger_menu_btn span {
+  width: 100%;
+  height: 5px;
+  background-color: #fff1b9;
+  border-radius: 2px;
+  display: block;
+  position: relative;
+  top: 10px;
+}
+nav .hamburger_menu_btn span::after,
+nav .hamburger_menu_btn span::before {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  border-radius: 2px;
+  background-color: #fff1b9;
+  transition: all .3s ease-in-out;
+}
+
+nav .hamburger_menu_btn span::after {
+  margin-top: -10px;
+}
+nav .hamburger_menu_btn span::before {
+  margin-top: 10px;
+}
+/* Hamburger Menu Rotate Animation */
+nav #hamburger_menu:checked ~ .hamburger_menu_btn span,
+nav #hamburger_menu:checked ~ .hamburger_menu_btn span::after,
+nav #hamburger_menu:checked ~ .hamburger_menu_btn span::before {
+  margin-top: 0px;
+}
+nav #hamburger_menu:checked ~ .hamburger_menu_btn span {
+  background: transparent;
+}
+nav #hamburger_menu:checked ~ .hamburger_menu_btn span::before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+nav #hamburger_menu:checked ~ .hamburger_menu_btn span::after{
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+/* Nav Menu */
+nav {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  height: auto;
+  background-color: #6e4e37;
+}
+nav ul {
+  list-style-type: none;
+  overflow: hidden;
+}
+nav ul li a {
+  display: block;
+  line-height: 50px;
+  text-align: center;
+  color: #fff1b9;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  letter-spacing: 1.2px;
+  font-weight: 700;
+}
+/* Mobile Nav Menu */
+nav .nav_menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .3s ease-out;
+}
+nav #hamburger_menu:checked ~ .nav_menu {
+  max-height: 250px;
+}
+/* Large Screen Style */
+@media screen and (min-width: 768px) {
+  .first_page_container h1 {
+    font-size: 36px;
+  }
+  nav .hamburger_menu_btn {
+    display: none;
+  }
+  nav .nav_menu {
+    clear: none;
+    max-height: none;
+    float: right;
+    margin-right: 15px;
+  }
+  nav ul li {
+    float: left;
+    width: 120px;
+    height: 50px;
+    position: relative;
+    }
+  nav ul li a {
+    display: block;
+    width: 120px;
+    height: 50px;
+  }
+  /* Underline Animation */
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      width: 0%;
+      transition: width 0.3s;
+    }
+    nav ul li a:hover::after {
+      width: 100%;
+      border: 2px solid #fff1b9;
+    }
+}
+
+/*Second Page Container*/
+.second_page_container {
+  width: 100%;
+  height: 100vh;
+}
+.second_page_container p {
+  font-size: 16px;
+  margin: 0 15px;
+  text-align: justify;
+  line-height: 24px;
+  font-family: 'Lato', sans-serif;
+  font-weight: normal;
+  margin-top: 10px;
+}
